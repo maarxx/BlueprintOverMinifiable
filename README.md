@@ -20,7 +20,7 @@ Pawns will then automatically uninstall that thing to make room for the blueprin
 
 # Links
 
-We're on Steam: 
+We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2974710896
 
 We're on GitHub: https://github.com/maarxx/BlueprintOverMinifiable
 
