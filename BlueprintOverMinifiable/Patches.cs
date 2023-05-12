@@ -61,14 +61,14 @@ namespace BlueprintOverMinifiable
             {
                 if (((Building)thing).DeconstructibleBy(worker.Faction))
                 {
-                    if (!thing.Map.designationManager.AllDesignationsOn(thing).Any(p => p.def == DesignationDefOf.Uninstall))
-                    {
-                        thing.Map.designationManager.AddDesignation(new Designation(thing, DesignationDefOf.Uninstall));
-                    }
                     if (worker.CanReserveAndReach(thing, PathEndMode.Touch, worker.NormalMaxDanger(), 1, -1, null, forced))
                     {
                         if (!worker.WorkTypeIsDisabled(WorkTypeDefOf.Construction))
                         {
+                            if (!thing.Map.designationManager.AllDesignationsOn(thing).Any(p => p.def == DesignationDefOf.Uninstall))
+                            {
+                                thing.Map.designationManager.AddDesignation(new Designation(thing, DesignationDefOf.Uninstall));
+                            }
                             __result = JobMaker.MakeJob(JobDefOf.Uninstall, thing);
                             return false;
                         }
