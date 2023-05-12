@@ -67,8 +67,11 @@ namespace BlueprintOverMinifiable
                     }
                     if (worker.CanReserveAndReach(thing, PathEndMode.Touch, worker.NormalMaxDanger(), 1, -1, null, forced))
                     {
-                        __result = JobMaker.MakeJob(JobDefOf.Uninstall, thing);
-                        return false;
+                        if (!worker.WorkTypeIsDisabled(WorkTypeDefOf.Construction))
+                        {
+                            __result = JobMaker.MakeJob(JobDefOf.Uninstall, thing);
+                            return false;
+                        }
                     }
                 }
             }
